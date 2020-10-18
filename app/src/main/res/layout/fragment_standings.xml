@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.activity.mainFragments.StandingsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/standings_linear"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textStyle="bold"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="League Name"-->
+<!--            android:textSize="16sp"/>-->
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/standings_recycler"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textStyle="bold"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="League Name"-->
+<!--            android:textSize="16sp"/>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/standings_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/no_data"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="No Data Available."
+            android:layout_margin="10dp"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </androidx.cardview.widget.CardView>
+<!--    </LinearLayout>-->
+</FrameLayout>
