@@ -23,12 +23,14 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
         globalController = new GlobalController(SplashScreen.this);
         globalController.clearContents();
         globalController.saveGames();
         globalController.saveTeams();
         globalController.saveStandings();
         globalController.saveLeagues();
+
         imageView = findViewById(R.id.splash_imageView);
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.animation);
         imageView.startAnimation(animation);

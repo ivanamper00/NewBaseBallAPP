@@ -15,8 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.islamkhsh.CardSliderAdapter;
-import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou;
+import com.ahmadrosid.svgloader.SvgLoader;
 import com.ivandeveloper.newbaseballapp.R;
 import com.ivandeveloper.newbaseballapp.SplashScreen;
 import com.ivandeveloper.newbaseballapp.controller.GlobalController;
@@ -24,6 +23,7 @@ import com.ivandeveloper.newbaseballapp.controller.activity.MainActivity;
 import com.ivandeveloper.newbaseballapp.model.LeagueModel;
 import com.squareup.picasso.Picasso;
 
+import java.io.InputStream;
 import java.util.List;
 
 public class LeaguesAdapter extends RecyclerView.Adapter<LeaguesAdapter.LeaguesViewHolder> {
@@ -54,6 +54,7 @@ public class LeaguesAdapter extends RecyclerView.Adapter<LeaguesAdapter.LeaguesV
                     globalController.saveStandings();
                     globalController.saveLeagues();
                     globalController.saveTeams();
+
                 }
             });
         }
@@ -80,7 +81,10 @@ public class LeaguesAdapter extends RecyclerView.Adapter<LeaguesAdapter.LeaguesV
         holder.country.setText(leagueModel.getCountry().getName() + "\n(" + leagueModel.getName() + ")");
         holder.league.setText(Integer.toString(leagueModel.getId()));
         if(leagueModel.getCountry().getFlag().substring(leagueModel.getCountry().getFlag().length()-3).contains("svg")){
-            GlideToVectorYou.justLoadImage((Activity) context, Uri.parse(leagueModel.getCountry().getFlag()),holder.flag);
+            SvgLoader.pluck()
+                    .with(activity)
+                    .setPlaceHolder(R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+                    .load(leagueModel.getCountry().getFlag(), holder.flag);
         }else{
             Picasso.get().load(leagueModel.getCountry().getFlag()).into(holder.flag);
         }

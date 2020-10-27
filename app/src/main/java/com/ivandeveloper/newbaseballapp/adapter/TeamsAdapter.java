@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.islamkhsh.CardSliderAdapter;
-import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou;
 import com.ivandeveloper.newbaseballapp.R;
 import com.ivandeveloper.newbaseballapp.model.StandingsResponse;
 import com.squareup.picasso.Picasso;
