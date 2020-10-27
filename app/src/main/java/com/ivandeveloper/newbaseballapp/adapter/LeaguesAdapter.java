@@ -83,7 +83,6 @@ public class LeaguesAdapter extends RecyclerView.Adapter<LeaguesAdapter.LeaguesV
         if(leagueModel.getCountry().getFlag().substring(leagueModel.getCountry().getFlag().length()-3).contains("svg")){
             SvgLoader.pluck()
                     .with(activity)
-                    .setPlaceHolder(R.mipmap.ic_launcher, R.mipmap.ic_launcher)
                     .load(leagueModel.getCountry().getFlag(), holder.flag);
         }else{
             Picasso.get().load(leagueModel.getCountry().getFlag()).into(holder.flag);
